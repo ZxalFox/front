@@ -1,20 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import keycloak from "@/lib/keycloak";
 
 export function useAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    keycloak.init({ onLoad: "login-required" }).then((auth) => {
-      setIsAuthenticated(auth);
-    });
+    const token = localStorage.getItem("token") ?? null;
+    const userId = localStorage.getItem("userId") ?? null;
+    if (token && userId) {
+      setIsAuthenticated(true);
+    }
   }, []);
+
+  const login = (token: string, id: number) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("userId", id.toString());
+    setIsAuthenticated(true);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setIsAuthenticated(false);
+  };
 
   return {
     isAuthenticated,
-    login: () => keycloak.login(),
-    logout: () => keycloak.logout(),
+    login,
+    logout,
   };
 }
