@@ -36,7 +36,7 @@ const Signup = () => {
   return (
     <div className="bg-pink-800 min-h-screen flex flex-col items-center justify-center">
       <h2 className="text-3xl font-semibold">Cadastro de Usuário</h2>
-      <div className="flex flex-col p-10 bg-pink-200 mt-4 ">
+      <form className="flex flex-col p-10 bg-pink-200 mt-4 ">
         <label htmlFor="name" className="text-pink-800 font-semibold mb-2">
           Nome
         </label>
@@ -65,6 +65,7 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
+          type="submit"
           className="bg-pink-800 mt-4 py-2 rounded-xl hover:cursor-pointer hover:bg-pink-200  hover:text-pink-800 duration-300 transition-all ease-in-out"
           onClick={handleSignup}
         >
@@ -74,7 +75,7 @@ const Signup = () => {
         <Link href="/" className="text-pink-800 mt-4 hover:text-pink-400">
           Já possui uma conta? Faça login
         </Link>
-      </div>
+      </form>
     </div>
   );
 };

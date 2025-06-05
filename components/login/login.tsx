@@ -33,7 +33,7 @@ const Login = () => {
     <div className="bg-pink-800 min-h-screen flex flex-col items-center justify-center">
       <h2 className="text-3xl font-semibold">Login</h2>
       <div>
-        <form className="flex flex-col p-10 bg-pink-200 mt-4 min-h-[300px]">
+        <form className="flex flex-col p-10 bg-pink-200 mt-4">
           <label htmlFor="email" className="text-pink-800 font-semibold mb-2">
             E-mail
           </label>
@@ -62,10 +62,14 @@ const Login = () => {
           >
             Entrar
           </button>
+
+          <Link
+            href="/signup"
+            className="text-pink-800 mt-4 hover:text-pink-400"
+          >
+            Não tem uma conta? Cadastre-se
+          </Link>
         </form>
-        <Link href="/signup" className="text-pink-800 mt-4 hover:text-pink-400">
-          Não tem uma conta? Cadastre-se
-        </Link>
       </div>
     </div>
   );
