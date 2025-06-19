@@ -12,6 +12,7 @@
     "@rails/actioncable": "^8.0.200",
     "keycloak-js": "^26.2.0",
     "next": "15.3.0",
+    "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",

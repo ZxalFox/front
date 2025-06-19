@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import EmotionsTable from "./emotions-table";
 import AddEmotionForm from "./add-emotion-form";
-import { useAuth } from "@/hooks/useAuth";
 
 export interface Emotion {
   id: number;

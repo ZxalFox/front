@@ -1,5 +1,11 @@
-import Login from "@/components/login/login";
+import AuthButton from "@/components/auth-button";
+import HomePage from "@/components/home";
 
 export default function LoginPage() {
-  return <Login />;
+  return (
+    <>
+      <AuthButton />;
+      <HomePage />;
+    </>
+  );
 }
